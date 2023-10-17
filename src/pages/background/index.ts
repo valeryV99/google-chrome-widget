@@ -8,4 +8,11 @@ reloadOnUpdate("pages/background");
  */
 reloadOnUpdate("pages/content/style.scss");
 
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+  // if (changeInfo.status === "complete") {
+  console.log("reloading, url:", { tab, changeInfo, url: tab.url });
+  chrome.tabs.sendMessage(tabId, { action: "reload" });
+  // }
+});
+
 console.log("background loaded");
