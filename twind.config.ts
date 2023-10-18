@@ -4,4 +4,23 @@ import presetAutoprefix from "@twind/preset-autoprefix";
 
 export default defineConfig({
   presets: [presetAutoprefix(), presetTailwind()],
+  theme: {
+    colors: {
+      white: {
+        DEFAULT: "#FFFFFF",
+      },
+      gray: {
+        'dark': "#394256"
+      },
+      purple: {
+        'primary': '#7400B7',
+        'primary-hover': '#8800D6',
+        'primary-disabled': '#F9F2FD',
+        'primary-disabled-text': '#A470C2',
+        'primary-focus': '#6700A3',
+        'primary-outlined-disabled': '#EBD8F8',
+        'primary-focus-light': '#F5E9FC',
+      }
+    }
+  }
 });

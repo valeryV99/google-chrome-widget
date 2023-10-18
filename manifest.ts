@@ -17,13 +17,14 @@ const manifest: chrome.runtime.ManifestV3 = {
   },
   action: {
     default_popup: "src/pages/popup/index.html",
-    default_icon: "icon-34.png",
+    default_icon: "catch-hotels-logo.png",
   },
-  chrome_url_overrides: {
-    newtab: "src/pages/newtab/index.html",
-  },
+  // initial page override
+  // chrome_url_overrides: {
+  //   newtab: "src/pages/newtab/index.html",
+  // },
   icons: {
-    "128": "icon-128.png",
+    "128": "catch-hotels-logo.png",
   },
   content_scripts: [
     {
