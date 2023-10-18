@@ -6,6 +6,9 @@ export default defineConfig({
   presets: [presetAutoprefix(), presetTailwind()],
   theme: {
     colors: {
+      black: {
+        DEAFAULT: '#061322'
+      },
       white: {
         DEFAULT: "#FFFFFF",
       },
@@ -20,6 +23,10 @@ export default defineConfig({
         'primary-focus': '#6700A3',
         'primary-outlined-disabled': '#EBD8F8',
         'primary-focus-light': '#F5E9FC',
+      },
+      blue: {
+        'graphic-element': '#00A0D0',
+        'middle': '#BDEFFF',
       }
     }
   }
