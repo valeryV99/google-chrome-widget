@@ -13,7 +13,9 @@ export default defineConfig({
         DEFAULT: "#FFFFFF",
       },
       gray: {
-        'dark': "#394256"
+        'dark': "#394256",
+        'middle': '#8591AA',
+        "light": "#F3F5F7",
       },
       purple: {
         'primary': '#7400B7',
@@ -27,6 +29,10 @@ export default defineConfig({
       blue: {
         'graphic-element': '#00A0D0',
         'middle': '#BDEFFF',
+        'text': '#007AA3',
+      },
+      red: {
+        DEAFULT: '#FF3F3F'
       }
     }
   }

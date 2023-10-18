@@ -1,4 +1,5 @@
 import Chrome from 'chrome'
+/// <reference types="vite-plugin-svgr/client" />
 
 declare namespace chrome {
   export default Chrome
@@ -12,13 +13,6 @@ declare module 'virtual:reload-on-update-in-background-script' {
 declare module 'virtual:reload-on-update-in-view' {
   const refreshOnUpdate: (watchPath: string) => void
   export default refreshOnUpdate
-}
-
-declare module '*.svg' {
-  import React = require('react')
-  export const ReactComponent: React.SFC<React.SVGProps<SVGSVGElement>>
-  const src: string
-  export default src
 }
 
 declare module '*.jpg' {

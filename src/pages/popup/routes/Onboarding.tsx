@@ -8,6 +8,8 @@ import secondSlide from '@src/assets/img/onboarding/2nd-slide.webp'
 import thirdSlide from '@src/assets/img/onboarding/3rd-slide.webp'
 import { useState } from 'react'
 import { cn } from '@root/src/shared/style/twind'
+import { useNavigate } from 'react-router-dom'
+import { ROUTES } from './router'
 
 const onboardingContent = [
   {
@@ -31,8 +33,17 @@ const lastSlideIndex = onboardingContent.length - 1
 
 const Onboarding = () => {
   const [currentSlideIdx, setCurrentSlideIdx] = useState(0)
+  const navigate = useNavigate()
+
+  const navigateToEmailSetup = () => {
+    navigate(ROUTES.EMAIL_SETUP)
+  }
 
   const handleNextButtonClick = () => {
+    if (currentSlideIdx === lastSlideIndex) {
+      navigateToEmailSetup()
+      return
+    }
     setCurrentSlideIdx(prev => prev === lastSlideIndex ? 0 : prev + 1)
   }
 
@@ -44,7 +55,7 @@ const Onboarding = () => {
     <div className='pb-6 flex w-[410px] h-[600px] flex-col'>
       <header className="pt-8 px-6 flex justify-between items-center">
         <img src={logo} className="App-logo" alt="logo" />
-        <button className="text-gray-dark">Skip</button>
+        <button className="text-gray-dark text-base leading-5" onClick={navigateToEmailSetup}>Skip</button>
       </header>
 
       <div className='mt-6'>
@@ -74,7 +85,7 @@ const Onboarding = () => {
 
       <div className="flex gap-[1.125rem] mx-6 mt-auto">
         <Button onClick={handlePrevButtonClick} disabled={currentSlideIdx === 0} outline className="flex-1">Back</Button>
-        <Button className="flex-1" disabled={currentSlideIdx === lastSlideIndex} onClick={handleNextButtonClick}>
+        <Button className="flex-1" onClick={handleNextButtonClick}>
           {currentSlideIdx === lastSlideIndex ? 'Done' : 'Next'}
         </Button>
       </div>
